@@ -1,0 +1,108 @@
+Problem
+
+Alice and Bob both have a sweet tooth, and they are going to play a game to
+collect pancakes. There are N pancake stacks lined up on the table labeled from
+1 to N. The i-th stack has exactly Ai pancakes. Alice and Bob are going to
+collect pancakes by alternating turns claiming full stacks. For the first turn,
+Alice must choose a stack labeled between La and Ra, inclusive, and claim it.
+Then, Bob must choose a stack labeled between Lb and Rb
+
+, inclusive, and different from the one chosen by Alice, and claim it.
+
+In subsequent turns, each of them must choose an unclaimed stack that is
+adjacent to a stack they claimed themselves before. That is, for Alice to claim
+stack i on one of her turns other than the first, she must have claimed either
+stack i−1 or stack i+1
+
+in one of her previous turns. The same is true for Bob. If at some point there
+is no valid choice for either player, they skip that turn and claim no stack.
+
+The game ends when every stack is claimed. At that point, Alice collects all
+pancakes from all stacks she claimed, and Bob collects all pancakes in all
+stacks he claimed.
+
+Alice wants to get as many pancakes as possible for herself, and Bob wants to
+get as many pancakes as possible for himself. Can you help Alice find out the
+maximum number of pancakes she can collect if they both play optimally?  Input
+
+The first line of the input gives the number of test cases, T . T
+
+test cases follow. Each test case consists of three lines.
+
+The first line of each test case contains an integer N
+
+, representing the number of pancake stacks.
+
+The second line contains N integers A1,A2,…,AN, where Ai denotes the number of
+pancakes in stack i
+
+.
+
+The third line contains 4 integers La, Ra, Lb, and Rb
+
+, the inclusive ranges of pancake stack labels Alice and Bob can choose for
+their first turn, respectively.  Output
+
+For each test case, output one line containing Case #x : y, where x is the test
+case number (starting from 1) and y
+
+is the maximum number of pancakes Alice can collect after playing the game
+optimally.  Limits
+
+Time limit: 30 seconds.  Memory limit: 2 GB.  1≤T≤100 .  1≤Ai≤109, for all i.
+1≤La≤Ra≤N 1≤Lb≤Rb≤N It is not the case that La≤Lb=Rb≤Ra
+
+. (Bob is guaranteed to be able to pick a stack for his first turn regardless of
+Alice's choice.) Test Set 1 (Visible Verdict)
+
+2≤N≤100
+
+.  Test Set 2 (Visible Verdict)
+
+2≤N≤105
+
+.  Sample Sample Input save_alt content_copy
+
+3 5 30 50 40 20 10 1 2 4 5 5 20 20 80 10 10 1 4 2 5 4 90 10 10 10 1 4 1 4
+
+Sample Output save_alt content_copy
+
+Case #1: 120 Case #2: 100 Case #3: 90
+
+In Sample Case #1, there are 5 pancake stacks with 30,50,40,20,10
+
+pancakes in them. Alice can choose the first or second stack at the beginning of
+the game, and Bob can choose the fourth or fifth stack to begin with. One way in
+which they both play optimally is:
+
+    At the beginning, Alice claims stack 2
+
+, then Bob claims stack 4 .  Alice claims stack 3 in her second turn, then Bob
+claims stack 5 in his second turn.  Alice claims stack 1
+
+    in her third turn, then the game ends because all stacks have been claimed.
+
+At the end of the game, Alice claimed stacks 1,2 , and 3 and Bob claimed stacks
+4 and 5. The number of pancakes Alice collects is 30+50+40=120
+
+.
+
+In Sample Case #2, one way of optimal play is:
+
+    At the beginning, Alice claims stack 3
+
+, then Bob claims stack 2 .  Alice claims stack 4 in her second turn, then Bob
+claims stack 1 in his second turn.  Alice claims stack 5
+
+    in her third turn, then the game ends because all stacks have been claimed.
+
+The number of pancakes Alice collects is 80+10+10=100
+
+.
+
+In Sample Case #3, both can claim any stack in their first turn. Since stack 1
+is more valuable than everything else combined, Alice claims it before Bob does.
+Then, Bob can claim stack 2, making Alice have to skip all her subsequent turns.
+Alice still finishes with 90 pancakes and Bob with just 30
+
+.  Test run mode
