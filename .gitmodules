@@ -1,0 +1,3 @@
+[submodule "external/google_coding-competitions-archive"]
+	path = external/google_coding-competitions-archive
+	url = git@github.com:Fromhell777/google_coding-competitions-archive.git
