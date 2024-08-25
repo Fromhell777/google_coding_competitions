@@ -1,0 +1,68 @@
+Problem
+
+Your friend Charles gives you a challenge. He puts N
+
+cards on a table and arranges them in a line in an order that he chooses. Each
+card has a single color, and each color can be on one or more cards.
+
+Charles then asks you to write a positive integer on each card without altering
+his chosen order such that:
+
+    The integers you write appear in non-decreasing order when cards are read
+from left to right.  Cards of the same color have the same integer written on
+them.  Cards of different colors have different integers written on them.
+
+Finally, Charles wants you to order the colors in increasing order of written
+integer. For example, if blue cards have a 2 , red cards have a 5, and green
+cards have a 3
+
+, the color order would be blue, green, red.  Input
+
+The first line of the input gives the number of test cases, T . T
+
+test cases follow.
+
+Each test case begins with a line containing the integer N . The next line
+contains N integers, S1, S2, …, SN, where Si represents the color of the i
+
+-th card from the left.  Output
+
+For each test case, output one line containing Case #x : y, where x is the test
+case number (starting from 1) and y is the set of colors, once each, listed in
+the requested order. If it is impossible to write integers in the given cards
+while adhering to all the rules, y
+
+must be IMPOSSIBLE instead.  Limits
+
+Time limit: 20 seconds.  Memory limit: 2 GB.  1≤T≤100 .  1≤Si≤105, for all i
+
+.  Test Set 1 (Visible Verdict)
+
+1≤N≤10
+
+.  Test Set 2 (Visible Verdict)
+
+1≤N≤105
+
+.  Sample Sample Input save_alt content_copy
+
+2 4 3 8 8 2 5 3 8 2 2 8
+
+Sample Output save_alt content_copy
+
+Case #1: 3 8 2 Case #2: IMPOSSIBLE
+
+In Sample Case #1, there are 3 different colors on 4 cards. One possible
+solution is to write the following integers, in order: 1, 2, 2, and 3. Notice
+that the same integer (2) is written on both cards of color 8. Then, the order
+of the colors is 3, 8, 2
+
+.
+
+In Sample Case #2, let c8 and c2 be the integers written in cards of color 8 and
+2, respectively. If c2>c8 then the rightmost two cards would not have their
+integers in non-decreasing order. If c2<c8 that would happen to the second and
+third card from the left. Finally, c8=c2
+
+is forbidden by one of the rules. Therefore, there is no valid way of writing
+the integers in this case.  Test run mode

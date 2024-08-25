@@ -1,0 +1,64 @@
+Problem
+
+Cody-Jamal has heard about generative artificial intelligence producing art. He
+is excited about the new art opportunities, but also worried about human-created
+art being displaced. He thought a good compromise would be to use computers to
+create art that humans simply cannot.
+
+Since Cody-Jamal is just beginning at computer-generated art, he started simple.
+He wants to create an immense string that shows the English alphabet in a
+doubly-repeated way, to represent its ubiquity and permanence.
+
+Cody-Jamal wrote the following program:
+
+for i = 1 to 1e100: for letter = A to Z: print letter i times
+
+Here 1e100 represents the integer 10100
+
+. For example:
+
+    When i=1
+
+, the program prints ABCD....XYZ.  When i=2 , the program prints
+AABBCC...XXYYZZ.  When i=3
+
+    , the program prints AAABBBCCC...XXXYYYZZZ.
+
+Of course, Cody-Jamal's program takes a long time to finish. Can you help him
+know what the N
+
+-th printed letter will be without waiting for it to be printed?  Input
+
+The first line of the input gives the number of test cases, T . T test cases
+follow.  Each test case consists of a single line with an integer N
+
+.  Output
+
+For each test case, output one line containing Case #x : y, where x is the test
+case number (starting from 1) and y is the N
+
+-th character printed by Cody-Jamal's program.  Limits
+
+Time limit: 20 seconds.  Memory limit: 2 GB.  1≤T≤100
+
+.  Test Set 1 (Visible Verdict)
+
+1≤N≤106
+
+.  Test Set 2 (Visible Verdict)
+
+1≤N≤1012
+
+.  Sample Sample Input save_alt content_copy
+
+2 5 31
+
+Sample Output save_alt content_copy
+
+Case #1: E Case #2: C
+
+The first 35 letters printed by Cody-Jamal's program are
+ABCDEFGHIJKLMNOPQRSTUVWXYZAABBCCDDE.... Therefore, the 5th printed character is
+E and the 31
+
+st is C.  Test run mode
