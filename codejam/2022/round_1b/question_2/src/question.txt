@@ -1,0 +1,111 @@
+Problem
+
+The lines at the air pump at your gas station are getting too long! You want to optimize the process to help customers more quickly inflate their tires, sports balls, giant parade balloon animals, and other products.
+
+The pump is automatic: you set the pressure to a specific number of pascals and plug the pump into the inflatable product, and it will inflate as needed to that exact pressure. There are only two buttons on the pump: up and down. They increase and decrease the target pressure, respectively, by exactly 1
+
+pascal.
+
+Image of air pump and soccer ball.
+
+There is a line of N
+customers, each of whom brings exactly P products that they need to get inflated by the pump. You know the target pressure of each product. You can inflate the products from a customer in any order you want, but you cannot change the order of the customers. Specifically, you must inflate all products from the i⁠-th customer before inflating any from the (i+1)
+
+⁠-th customer. In between handling two products, if those two products have different target pressures, you need to use the buttons on the pump.
+
+The pump is initially set to 0
+
+pascals, and it can be left at any number after all products of all customers have been inflated. If you order the products of each customer optimally, what is the minimum number of button presses you need?
+Input
+
+The first line of the input gives the number of test cases, T
+. T test cases follow. Each test case starts with a line containing two integers, N and P: the number of customers and the number of products each customer brings, respectively. Then, N lines follow. The i-th of these lines contains P integers Xi,1,Xi,2,…,Xi,P, representing that the j-th product that the i-th customer brings has a target pressure of Xi,j
+
+pascals.
+Output
+
+For each test case, output one line containing Case #x
+: y, where x is the test case number (starting from 1) and y
+
+is the minimum number of button presses needed to inflate all products according to their specified pressures.
+Limits
+
+Time limit: 5 seconds.
+Memory limit: 1 GB.
+1≤T≤100
+.
+1≤Xi,j≤109, for all i,j
+
+.
+Test Set 1 (Visible Verdict)
+
+2≤N≤10
+.
+2≤P≤3
+
+.
+Test Set 2 (Hidden Verdict)
+
+2≤N≤1000
+.
+2≤P≤100
+
+.
+Sample
+Sample Input
+save_alt
+content_copy
+
+2
+3 3
+30 10 40
+20 50 60
+60 60 50
+5 2
+1 1000000000
+500000000 1000000000
+1 1000000000
+500000000 1
+1 1000000000
+
+Sample Output
+save_alt
+content_copy
+
+Case #1: 110
+Case #2: 4999999996
+
+In Sample Case #1, an optimal way to use the pump is:
+
+    press up 10
+
+times, setting the pump to 10; pump the product (from customer 1) that needs 10
+pascals,
+press up 30
+times, setting the pump to 40; pump the product (from customer 1) that needs 40
+pascals,
+press down 10
+times, setting the pump to 30; pump the product (from customer 1) that needs 30
+pascals,
+press down 10
+times, setting the pump to 20; pump the product (from customer 2) that needs 20
+pascals,
+press up 30
+times, setting the pump to 50; pump the product (from customer 2) that needs 50
+pascals,
+press up 10
+times, setting the pump to 60; pump the product (from customer 2) and the two products (from customer 3) that need 60
+pascals, and finally
+press down 10
+times, setting the pump to 50; pump the product (from customer 3) that needs 50
+
+    pascals.
+
+This is a total of 110
+
+button presses.
+
+In Sample Case #2, notice that the answer can be larger than 232
+
+.
+Test run mode
