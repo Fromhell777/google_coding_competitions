@@ -1,0 +1,80 @@
+Problem
+
+Let us define F(B,L,R)
+as the sum of a subarray of an array B bounded by indices L and R (both inclusive). Formally, F(B,L,R)=BL+BL+1+⋯+BR
+
+.
+
+An array C
+of length K is called a happy array if all the prefix sums of C are non-negative. Formally, the terms F(C,1,1),F(C,1,2),…,F(C,1,K)
+
+are all non-negative.
+
+Given an array A
+of N integers, find the result of adding the sums of all the happy subarrays in the array A
+
+.
+Input
+
+The first line of the input gives the number of test cases, T
+. T test cases follow.
+Each test case begins with one line consisting an integer N denoting the number of integers in the input array A. Then the next line contains N integers A1,A2,…,AN representing the integers in given input array A
+
+.
+Output
+
+For each test case, output one line containing Case #x
+: y, where x is the test case number (starting from 1) and y is the result of adding the sums of all happy subarrays in the given input array A
+
+.
+Limits
+
+Time limit: 25 seconds.
+Memory limit: 1 GB.
+1≤T≤100
+.
+−800≤Ai≤800, for all i
+
+.
+Test Set 1
+
+1≤N≤200
+
+.
+Test Set 2
+
+For at most 30 cases:
+1≤N≤4×105
+.
+For the remaining cases:
+1≤N≤200
+
+.
+Sample
+Sample Input
+save_alt
+content_copy
+
+2
+5
+1 -2 3 -2 4
+3
+1 0 3
+
+Sample Output
+save_alt
+content_copy
+
+Case #1: 14
+Case #2: 12
+
+In Sample Case #1, the happy subarrays are [1],[3],[3,−2],[3,−2,4],
+and [4] with their respective sums 1,3,1,5, and 4. After adding the sums obtained, the result is 14
+
+.
+
+In Sample Case #2, the happy subarrays are [1],[1,0],[1,0,3],[0],[0,3],
+and [3] with their respective sums 1,1,4,0,3, and 3. After adding the sums obtained, the result is 12
+
+.
+Test run mode
