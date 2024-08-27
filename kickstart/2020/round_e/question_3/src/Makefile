@@ -9,12 +9,10 @@ SOURCES := $(shell find . -maxdepth 1 -name "*.cpp")
 INCDIRS := -I ../../../../../include
 
 CXX := g++
-CXXFLAGS := -g -std=c++23 -Wall -Wextra -Werror -pedantic -O3 $(INCDIRS)
+CXXFLAGS := -g -std=c++17 -Wall -Wextra -Werror -pedantic -O3 $(INCDIRS)
 
 OBJECTS_WRONG_DIR := $(foreach source, $(SOURCES), $(basename $(source)).o)
 OBJECTS := $(addprefix $(OBJDIR)/, $(notdir $(OBJECTS_WRONG_DIR)))
-DEPS_WRONG_DIR := $(OBJECTS_WRONG_DIR:.o=.d)
-DEPENDENCIES := $(addprefix $(DEPDIR)/, $(notdir $(DEPS_WRONG_DIR)))
 
 define mkdir_target
 test -d $(@D) \
@@ -38,5 +36,6 @@ $(OBJDIR)/%.o : %.cpp
 clean:
 	@echo Removing objects
 	rm -f $(OBJECTS) > /dev/null 2>&1
+	rm -rf $(OBJDIR) > /dev/null 2>&1
 	@echo Removing executable
 	rm -f $(APPNAME) > /dev/null 2>&1
